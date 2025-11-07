@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>Self Service+</displayName>
+<description>returns CFBundleShortVersionString string for Self Service+</description>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/bash
+
+SelfServicePlusVertion=""
+
+if [ -f /Applications/Self\ Service+.app/Contents/Info.plist ]
+	then
+		SelfServicePlusVertion=$(defaults read /Applications/Self\ Service+.app/Contents/Info.plist CFBundleShortVersionString 2&gt;/dev/null)
+fi
+
+echo "&lt;result&gt;$SelfServicePlusVertion&lt;/result&gt;"
+
+exit 0</scriptContentsMac>
+</extensionAttribute>

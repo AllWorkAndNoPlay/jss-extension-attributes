@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>OracleJavaVersion</displayName>
+<description/>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/bash
+JavaVersion=""
+
+if [ -f "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist" ]; then
+    JavaVersion=$(defaults read "/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Info.plist" CFBundleVersion)
+fi
+
+echo "&lt;result&gt;$JavaVersion&lt;/result&gt;"
+
+exit 0</scriptContentsMac>
+</extensionAttribute>

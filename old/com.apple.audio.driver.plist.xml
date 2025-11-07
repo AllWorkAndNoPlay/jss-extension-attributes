@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>com.apple.audio.driver.plist</displayName>
+<description>checks for /Library/LaunchDaemons/com.apple.audio.driver.plist</description>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/bash&#13;
+ColdrootInfection="Not Found"&#13;
+if [[ -f /Library/LaunchDaemons/com.apple.audio.driver.plist ]] || [[ -d /private/var/tmp/com.apple.audio.driver.app ]]&#13;
+    then&#13;
+        ColdrootInfection="Possible Infection"&#13;
+fi&#13;
+echo "&lt;result&gt;$ColdrootInfection&lt;/result&gt;"&#13;
+exit 0</scriptContentsMac>
+</extensionAttribute>

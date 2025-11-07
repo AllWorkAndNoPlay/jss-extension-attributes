@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>UserID 401</displayName>
+<description/>
+<dataType>integer</dataType>
+<scriptContentsMac>if dscl . -list /Users UniqueID | grep -c ' 401'; &#13;
+then&#13;
+    echo "&lt;result&gt;1&lt;/result&gt;"&#13;
+else&#13;
+    echo "&lt;result&gt;0&lt;/result&gt;"&#13;
+fi</scriptContentsMac>
+</extensionAttribute>

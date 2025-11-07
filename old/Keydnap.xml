@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>Keydnap</displayName>
+<description/>
+<dataType>integer</dataType>
+<scriptContentsMac>#!/bin/bash&#13;
+&#13;
+if [[ -e /Library/Application\ Support/com.apple.iCloud.sync.daemon ]]; then&#13;
+    echo "&lt;result&gt;1&lt;/result&gt;"&#13;
+else&#13;
+    echo "&lt;result&gt;0&lt;/result&gt;"&#13;
+fi</scriptContentsMac>
+</extensionAttribute>

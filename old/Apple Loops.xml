@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>Apple Loops</displayName>
+<description>Returns the installed version of Apple Loops</description>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/bash
+
+ExtensionVersion=""
+
+if [ -f /usr/local/bin/appleLoops.py ]; then
+	ExtensionVersion=$(python /usr/local/bin/appleLoops.py --version | cut -d' ' -f3)
+fi
+
+if [ "$ExtensionVersion" == "" ]; then
+	ExtensionVersion="Not Installed"
+fi
+
+echo "&lt;result&gt;$ExtensionVersion&lt;/result&gt;"
+
+exit 0</scriptContentsMac>
+</extensionAttribute>

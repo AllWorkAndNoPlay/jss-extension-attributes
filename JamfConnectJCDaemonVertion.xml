@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>JamfConnectJCDaemonVertion</displayName>
+<description>returns CFBundleShortVersionString string from JamfConnect JCDaemon </description>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/bash
+
+JamfConnectJCDaemonVertion=""
+
+if [ -f /Library/Application\ Support/JamfConnect/JCDaemon.app/Contents/Info.plist ]
+	then
+		JamfConnectJCDaemonVertion=$(defaults read /Library/Application\ Support/JamfConnect/JCDaemon.app/Contents/Info.plist CFBundleShortVersionString 2&gt;/dev/null)
+fi
+
+echo "&lt;result&gt;$JamfConnectJCDaemonVertion&lt;/result&gt;"
+
+exit 0</scriptContentsMac>
+</extensionAttribute>

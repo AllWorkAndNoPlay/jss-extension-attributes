@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><extensionAttribute>
+<displayName>zoom.us Version</displayName>
+<description/>
+<dataType>string</dataType>
+<scriptContentsMac>#!/bin/sh
+CFBundleVersion=""
+if [ -f "/Applications/zoom.us.app/Contents/Info.plist" ]; then
+    CFBundleVersion=$(defaults read "/Applications/zoom.us.app/Contents/Info.plist" CFBundleVersion)
+fi
+echo "&lt;result&gt;$CFBundleVersion&lt;/result&gt;"
+exit 0</scriptContentsMac>
+</extensionAttribute>
